@@ -1,0 +1,350 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow-y: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 11;
+}
+
+/* Hides divs instead of using display none css for each div*/
+.hidden {
+    position: absolute;
+    left: -9999px; 
+     opacity: 0;
+    transition: 2s; 
+}
+
+.bg {
+    /* The image used */
+    background-image: url("../images/music-concert.jpg");
+    /* Full height */
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    opacity: .9;
+}
+
+.homeDiv,
+#survey
+{
+    height: 30vh;
+    width: 300px;
+    background-color: rgba(0,0,0,.6);
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -70vh;
+    padding-top: 3%;
+
+ } 
+
+
+#survey {
+    position: relative;
+    top: 12vh;
+    height: 80vh;
+    width: 100vmin;
+    background-color: #121212;
+    box-shadow: 0px 0px 20px 0px white;   
+    overflow-y: hidden;
+    padding-top: 0%;
+    z-index: 1;
+
+ }
+h1, 
+p ,
+td,
+th,
+a{
+    text-align: center;
+    color: whitesmoke;
+    letter-spacing: .02em;
+    line-height: 1.15;
+    margin-top: 0;
+    text-decoration: none;
+}
+
+strong {
+    padding-left: 1em;
+   text-decoration: 1px solid #535353;
+   letter-spacing: -.01em;
+
+
+}
+
+h2 {
+    color: whitesmoke;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+        
+    text-align: left;
+    padding: 8px;
+    padding-left: 10px;
+}
+
+#thumbsUp {
+    float: right;
+    padding-right: 15%;
+}
+tr {
+    border-bottom: 1px solid #535353;
+}
+
+.quiz {
+    text-align: left;
+    font-size: 1rem;
+    padding-left: 3%;
+
+
+}
+
+input {
+    margin-left: 1em;
+    border-radius: 10em;
+    padding: .75em; 
+}
+
+select {
+    width: 2.5em;
+   float: right;
+   color: whitesmoke;
+}
+h1 {
+    font-size: 2.5rem;
+}
+
+#user,
+#spotify,
+#spotifyMatch {
+    height: 50vh;
+    width: 50vh;
+    display: inline-flex;
+    opacity: .85;
+    background-color: purple;
+    width: 25vmax;
+    height: 25vmax;
+    border-radius: 50%;
+    background-position: center;
+    display: block;
+    float: left;
+    background-color: #eee;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 20;
+
+}
+
+#userPic,
+#spotifyLogo,
+#matchPic {
+    height: 100%;
+    width: 100%;
+}
+
+#userName,
+#matchName {
+    color: whitesmoke;
+    font-size: 2rem;
+    text-align: center;
+    justify-content: baseline;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 0%;
+    z-index: 9;
+    display: block;
+    position:relative;
+    top: 70%;
+    text-align:center
+}
+
+#matches
+ {
+    width: 100vw;
+    margin: auto; 
+    z-index: 9;
+    position: relative;
+    top: -70vh;
+    display: flex;
+    justify-content: center;
+}
+
+.toSurvey{
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 1em 1em 1em;
+    transition-duration: .3s;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    position: relative;
+    left: 20%;
+    background-color: #1db954;
+    color: whitesmoke;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+.submit {
+    background-color: #1db954;
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 10px;
+    line-height: 1;
+    border-radius: 100em;
+    padding: 1em 1em 1em;
+    transition-duration: .3s;
+    border-width: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: normal;
+    user-select: none;
+    margin-left: .5vw;
+} 
+
+.toSurvey:hover, 
+.submit:hover {
+    background-color: #4fe383;
+    padding: 1em 1.15em 1.15em;
+}
+
+#reset {
+    color: whitesmoke;
+    cursor: pointer; 
+    display: inline-block;
+    border-radius: 50px;
+    border: .15em solid whitesmoke;
+    padding: 0.2em 0.3em;
+    position: fixed;
+    top: 1%;
+}
+
+
+.profile {
+    float: right;
+    padding-right: 3em;
+    padding-top: 1em;
+}
+
+.profilePic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-position: center;
+}
+
+.logo {
+    position: fixed;
+    top: 0;
+    padding-left: 1em;
+    padding-top: .5em;
+    float: left;
+    font-size: 2em;
+    color: whitesmoke;
+   background-color: rgba(0,0,0,.6);
+    z-index: 10;
+    width: 100vw;
+    height: 8vh;
+}
+
+.logoText {
+    float: left;
+    padding-right: .4em;
+}
+
+.logoText:hover {
+    color: #1db954;
+    cursor: pointer;
+}
+footer {
+    background: transparent;
+    position: fixed;
+    bottom: 0%;
+    width: 100vw;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#github {
+    font-size: 2em;
+}
+
+@media screen and (max-width: 640px) {
+
+.profile {
+    float: right;
+    padding-right: 0em;
+    padding-top: 1em;
+}
+
+
+
+.logo {
+    background-color: #121212;
+}
+
+#survey {
+    top: 10.4vh;
+    overflow-y: auto;
+}
+input {
+    margin-bottom: 2%;
+}
+
+.submit {
+    margin-left: 13%;
+}
+
+#matches {
+    display:inline-block;
+}
+
+#user {
+    margin-left: 3%;
+}
+
+#spotify{
+    position: absolute;
+    top: 30vh;
+    left: 27vw;
+}
+
+#spotifyMatch {
+    margin-left: 6%;
+}
+
+#userName,
+#matchName {
+    top: -10vh;
+}
+   
+}

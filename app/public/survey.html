@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SpotiFinder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">    
+
+</head>
+<body>
+        <header class="logo">
+                <a href="/" class="logoText">SpotiFinder</a>  <i onclick="reset" id="reset"  alt="Go Back"class="fas fa-fast-backward"></i>
+        </header>
+
+          
+        <section class='bg'>
+           <div class="overlay"> </div>
+            
+                <div id='survey'>    
+                        <div class="profile">
+                                <img class="profilePic" src="https://openclipart.org/download/247319/abstract-user-flat-3.svg">
+                            </div>               
+  
+                                <h2><strong>About You</strong></h2>
+        
+                                <input id="name" type="text" placeholder="Name (required)" class="validate" required>
+                                <input id="photo" type="text" placeholder="Image URL (required)" class="validate" required>
+                                <button type ="submit" class="submit">Submit</button>
+
+                            
+                                <h2><strong>Survey Questions</strong></h2>
+                                <table class="quiz">
+                                        <tr>
+                                          <th>#</th>
+                                          <th>&emsp13;</th>
+                                          <th>Question</th>
+                                          <th><i id="thumbsUp" class="far fa-thumbs-up"></i></th>
+                                        </tr>
+                                        <tr>
+                                          <td>1</td>
+                                          <td><span>+</span></td>
+                                          <td>I unironically tell people that I listen to everything BUT country.</td>
+                                          <td><select data-placeholder="" class="default" id="q1">
+                                                <option value="">-- Choose an option --</option>
+                                                <option value="1">1 (Strongly Disagree)</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5 (Strongly Agree)</option>
+                                            </select> </td>
+                                        </tr>
+                                        <tr>
+                                        <td>2</td>
+                                        <td><span>+</span></td>
+                                        <td>I can listen to the same song/playlist for hours.</td>
+                                        <td><select data-placeholder="" class="default" id="q2">
+                                              <option value="">-- Choose an option --</option>
+                                              <option value="1">1 (Strongly Disagree)</option>
+                                              <option value="2">2</option>
+                                              <option value="3">3</option>
+                                              <option value="4">4</option>
+                                              <option value="5">5 (Strongly Agree)</option>
+                                          </select> </td>
+                                      </tr>
+                                      <tr>
+                                      <td>3</td>
+                                      <td><span>+</span></td>
+                                      <td>Premium music subscriptions essentially count as a utility.</td>
+                                      <td><select data-placeholder="" class="default" id="q3">
+                                            <option value="">-- Choose an option --</option>
+                                            <option value="1">1 (Strongly Disagree)</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5 (Strongly Agree)</option>
+                                        </select> </td>
+                                    </tr>
+                                    <tr>
+                                    <td>4</td>
+                                    <td><span>+</span></td>
+                                    <td>I go to festivals/concerts often.</td>
+                                    <td><select data-placeholder="" class="default" id="q4">
+                                          <option value="">-- Choose an option --</option>
+                                          <option value="1">1 (Strongly Disagree)</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5 (Strongly Agree)</option>
+                                      </select> </td>
+                                  </tr>
+                                  <tr>
+                                  <td>5</td>
+                                  <td><span>+</span></td>
+                                  <td>I'm willing to give any song a chance.</td>
+                                  <td><select data-placeholder="" class="default" id="q5">
+                                        <option value="">-- Choose an option --</option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select> </td>
+                                </tr>
+                                <tr>
+                                <td>6</td>
+                                <td><span>+</span></td>
+                                <td>I collect vinyl or other music related items.</td>
+                                <td><select data-placeholder="" class="default" id="q6">
+                                      <option value="">-- Choose an option --</option>
+                                      <option value="1">1 (Strongly Disagree)</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="5">5 (Strongly Agree)</option>
+                                  </select> </td>
+                              </tr>
+                              <tr>
+                              <td>7</td>
+                              <td><span>+</span></td>
+                              <td>I can play an instrument/sing and/or create music.</td>
+                              <td><select data-placeholder="" class="default" id="q7">
+                                    <option value="">-- Choose an option --</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select> </td>
+                            </tr>
+                            <tr>
+                            <td>8</td>
+                            <td><span>+</span></td>
+                            <td>Music affects my mood.</td>
+                            <td><select data-placeholder="" class="default" id="q8">
+                                  <option value="">-- Choose an option --</option>
+                                  <option value="1">1 (Strongly Disagree)</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5 (Strongly Agree)</option>
+                              </select> </td>
+                          </tr>
+                          <tr>
+                          <td>9</td>
+                          <td><span>+</span></td>
+                          <td>I look up the meanings of lyrics.</td>
+                          <td><select data-placeholder="" class="default" id="q9">
+                                <option value="">-- Choose an option --</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select> </td>
+                        </tr>
+                        <tr>
+                        <td>10</td>
+                        <td><span>+</span></td>
+                        <td>Nothing wrong with listening to only the popular music.</td>
+                        <td><select data-placeholder="" class="default" id="q10">
+                              <option value="">-- Choose an option --</option>
+                              <option value="1">1 (Strongly Disagree)</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5 (Strongly Agree)</option>
+                          </select> </td>
+                      </tr>
+                                      </table>
+                                
+                                <br>
+                            
+                    </div>
+               
+
+                
+            
+                </section>
+
+                <section id="matches" class="hidden">
+
+                      
+      
+                        <div id="user">
+                                <img id="userPic" src="" alt="You">
+                                <span id="userName">Text</span>
+                        </div>
+                    
+                        <div id="spotify">
+                                <img id="spotifyLogo" src="" alt="No Image">
+                                <span id="matchedWith">It's a match! Share a playlist!</span>
+                        </div>
+                    
+                        <div id="spotifyMatch"> 
+                                <img id="matchPic" src="" alt="Your Match">
+                                <span id="matchName">Text</span>
+    
+                        </div>
+    
+                    </section>
+
+        <footer> <a href="api/friends"> API Friends List </a> |
+            <a href="https://github.com/romontilus/friendfinder"> <i id="github" class="fab fa-github"></i></a>
+        </footer>
+        
+        
+        <!-- Grabs information and sends it to server -->
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $(".submit").on("click", function() {
+                //form validation
+                function validateForm() {
+                    var isValid = true;
+                    $('.validate').each(function() {
+                        if ($(this).val() === ''){
+                            isValid = false;
+                        }
+                    });
+        
+                    $('.default').each(function() {
+                        if ($(this).val() === ""){
+                            isValid = false;
+                        }
+                    });
+        
+                    return isValid;
+                }
+        
+                //if everything is filled
+                if (validateForm() == true) {
+                    $('#survey').addClass("hidden");
+                    reveal();
+                    //creates a new friend from the values submitted
+                    var newFriend = {
+                        name: $('#name').val().trim(),
+                        profilePic: $('#photo').val().trim(),
+                        scores: [
+                            $('#q1').val(),
+                            $('#q2').val(),
+                            $('#q3').val(),
+                            $('#q4').val(),
+                            $('#q5').val(),
+                            $('#q6').val(),
+                            $('#q7').val(),
+                            $('#q8').val(),
+                            $('#q9').val(),
+                            $('#q10').val(),
+                        ]
+                       
+                        
+                    };
+        
+                    //Grabs current URL of website
+                    var currentURL = window.location.origin;
+        
+                    //AJAX posts the data to friends API.
+                    $.post(currentURL + "/api/friends", newFriend, function(data) {
+                        //Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                        $("#matchName").text(data.name);
+                        $("#userName").text(newFriend.name);
+                        $("#userPic").attr("src", newFriend.profilePic);
+                        $("#spotifyLogo").attr("src", "https://cdn.freebiesupply.com/logos/large/2x/spotify-2-logo-png-transparent.png");
+                        $("#matchPic").attr("src", data.profilePic);
+
+                        reveal();
+        
+                    });
+                    //clear form after submission
+                    $('#name').val("");
+                    $('#photo').val("");
+                    $('#q1').val("");
+                    $('#q2').val("");
+                    $('#q3').val("");
+                    $('#q4').val("");
+                    $('#q5').val("");
+                    $('#q6').val("");
+                    $('#q7').val("");
+                    $('#q8').val("");
+                    $('#q9').val("");
+                    $('#q10').val("");
+                } else {
+                    alert("Please fill out ALL fields before submitting survey!")
+                }
+        
+               
+
+            });
+
+        });
+//Reveals the match
+        function reveal () {
+            $('#reset').css({"color": "#1db954"});
+            $('#matches').removeClass("hidden");
+            $('#user, #spotify, #spotifyMatch').addClass("hidden");
+            $('.overlay').css({"display":"block"});
+            $('#main').addClass(fadeOut).one(endAnimation, function () {
+            $(this).removeClass(fadeOut);
+            $(this).addClass("hidden");
+        });
+       
+             $('#spotify').addClass(fadeIn).one(endAnimation, function () {
+                $('#spotify').removeClass("hidden");
+            $(this).removeClass(fadeIn);
+            
+        });
+            setTimeout(function(){ 
+        $('#user, #spotifyMatch').removeClass("hidden");
+        $('#user').addClass(comeLeft).one(endAnimation, function () {
+            $(this).removeClass(comeLeft);
+        });
+        $('#spotifyMatch').addClass(comeRight).one(endAnimation, function () {
+            $(this).removeClass(comeRight);
+        });
+    }, 3000); 
+        };
+
+
+
+        $(document).on("click", "#reset, #spotifyLogo", reset);
+//Resets everything
+        function reset () {
+            $('#reset, .overlay').removeAttr('style');
+            $('#matches').addClass("hidden");
+            $('#survey').removeClass("hidden");
+            $('#survey').addClass(fadeIn).one(endAnimation, function () {
+            $(this).removeClass(fadeIn);
+        });
+
+};
+//Animations
+        var fadeIn = 'animated fadeIn';
+        var comeUp = 'animated fadeInUp';   
+        var comeLeft = 'animated fadeInLeft';
+        var comeRight = 'animated fadeInRight';
+        var fadeOut = 'animated fadeOut';
+        var endAnimation = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+</script>
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow-y: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 11;
+}
+
+/* Hides divs instead of using display none css for each div*/
+.hidden {
+    position: absolute;
+    left: -9999px; 
+     opacity: 0;
+    transition: 2s; 
+}
+
+.bg {
+    background-image: url("https://thehiringadvisors.com/wp-content/uploads/2018/05/music-concert.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    opacity: .9;
+}
+
+#survey {
+    position: relative;
+    top: 12vh;
+    height: 80vh;
+    width: 100vmin;
+    background-color: #121212;
+    box-shadow: 0px 0px 20px 0px white;   
+    overflow-y: hidden;
+    padding-top: 0%;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 1;
+
+ }
+h1, 
+p ,
+td,
+th,
+a{
+    text-align: center;
+    color: whitesmoke;
+    letter-spacing: .02em;
+    line-height: 1.15;
+    margin-top: 0;
+    text-decoration: none;
+}
+
+strong {
+    padding-left: 1em;
+   text-decoration: 1px solid #535353;
+   letter-spacing: -.01em;
+
+
+}
+
+h2 {
+    color: whitesmoke;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+        
+    text-align: left;
+    padding: 8px;
+    padding-left: 10px;
+}
+
+#thumbsUp {
+    float: right;
+    padding-right: 15%;
+}
+tr {
+    border-bottom: 1px solid #535353;
+}
+
+.quiz {
+    text-align: left;
+    font-size: 1rem;
+    padding-left: 3%;
+
+
+}
+
+input {
+    margin-left: 1em;
+    border-radius: 10em;
+    padding: .75em; 
+}
+
+select {
+    width: 3.5em;
+   float: right;
+   color: whitesmoke;
+}
+h1 {
+    font-size: 2.5rem;
+}
+
+#user,
+#spotify,
+#spotifyMatch {
+    height: 50vh;
+    width: 50vh;
+    display: inline-flex;
+    opacity: .85;
+    background-color: purple;
+    width: 25vmax;
+    height: 25vmax;
+    border-radius: 50%;
+    background-position: center;
+    display: block;
+    float: left;
+    background-color: #eee;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 20;
+    box-shadow: 0 0 0 3px #1db954;
+
+}
+
+#userPic,
+#spotifyLogo,
+#matchPic {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    opacity: .95;
+}
+
+#spotifyLogo {
+    opacity: .85;
+    cursor: pointer;
+}
+
+#spotifyLogo:hover {
+    opacity: 1;
+}
+
+#userName,
+#matchName,
+#matchedWith {
+    color: whitesmoke;
+    font-size: 2rem;
+    text-align: center;
+    justify-content: baseline;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 0%;
+    z-index: 9;
+    display: block;
+    position:relative;
+    top: 15%;
+    text-align:center;
+}
+
+#matchedWith {
+ left: -10%;
+ text-align: center;
+ font-size: 1.8rem;
+ width: 30vw;
+}
+#matches
+ {
+    width: 100vw;
+    margin: auto; 
+    z-index: 9;
+    position: relative;
+    top: -80vh;
+    display: flex;
+    justify-content: center;
+}
+
+.submit {
+    background-color: #1db954;
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 10px;
+    line-height: 1;
+    border-radius: 100em;
+    padding: 1em 1em 1em;
+    transition-duration: .3s;
+    border-width: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: normal;
+    user-select: none;
+    margin-left: .5vw;
+} 
+
+.submit:hover {
+    background-color: #4fe383;
+    padding: 1em 1.15em 1.15em;
+}
+
+#reset {
+    color: whitesmoke;
+    cursor: pointer; 
+    display: inline-block;
+    border-radius: 50px;
+    border: .15em solid whitesmoke;
+    padding: 0.2em 0.3em;
+    position: fixed;
+    top: 1%;
+}
+
+
+.profile {
+    float: right;
+    padding-right: 3em;
+    padding-top: 1em;
+}
+
+.profilePic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-position: center;
+}
+
+.logo {
+    position: fixed;
+    top: 0;
+    padding-left: 1em;
+    padding-top: .5em;
+    float: left;
+    font-size: 2em;
+    color: whitesmoke;
+   background-color: rgba(0,0,0,.6);
+    z-index: 10;
+    width: 100vw;
+    height: 8vh;
+}
+
+.logoText {
+    float: left;
+    padding-right: .4em;
+}
+
+.logoText:hover {
+    color: #1db954;
+    cursor: pointer;
+}
+footer {
+    background: transparent;
+    position: fixed;
+    bottom: 0%;
+    width: 100vw;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#github {
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 640px) {
+
+body, html {
+    overflow: hidden;
+}
+
+.profile {
+    float: right;
+    padding-right: 0em;
+    padding-top: 1em;
+}
+
+
+
+.logo {
+    background-color: #121212;
+}
+
+#survey {
+    top: 10.4vh;
+    overflow-y: auto;
+}
+input {
+    margin-bottom: 2%;
+}
+
+.submit {
+    margin-left: 13%;
+}
+
+#matches {
+    display:inline-block;
+    margin-top: 2%;
+}
+
+#user {
+    margin-left: 3%;
+}
+
+#spotify{
+    position: absolute;
+    top: 25vh;
+    left: 27vw;
+}
+
+#spotifyMatch {
+    margin-left: 6%;
+}
+
+#userName,
+#matchName {
+    top: -32vh;
+    left: -8vw;
+    width: 60vw;
+    font-size: 1.2em;
+}
+
+#matchedWith {
+    margin-left: -53%;
+    width: 100vw;
+    font-size: 1.57em;
+
+}
+
+select {
+    width: 2.5em;
+    padding-left: 5%;
+}
+}
+</style>
+</body>
+</html>
